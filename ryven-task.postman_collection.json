@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "07856345-9e6e-457a-9444-b2c37eda63c3",
+		"name": "ryven-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8236775"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "test-token-role-wise",
+					"item": [
+						{
+							"name": "get-role-wise-test-account-credentials-and-token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{3000}}/auth/get-role-wise-test-account-credentials-and-token",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"get-role-wise-test-account-credentials-and-token"
+									],
+									"query": [
+										{
+											"key": "role",
+											"value": "MANAGER",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "forget-pw",
+					"item": [
+						{
+							"name": "reset-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"masum498673@gmail.com\",\r\n    \"password\":\"123458\",\r\n    \"confirmPassword\":\"123458\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc3VtNDk4NjczQGdtYWlsLmNvbSIsImV4cGlyZUF0IjoxNzM5MDEzNTcxMTExLCJpYXQiOjE3MzkwMTMyNzF9.LdTq-TOFUzBCsCmmBoSMHM8ivs4j5ZV-TWpuYOTu0fg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/reset-password",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "request-account-recovery",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"masum498673@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/recovery",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"recovery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-account-recovery",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{3000}}/auth/recovery/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc3VtNDk4NjczQGdtYWlsLmNvbSIsImV4cGlyZUF0IjoxNzM5MDEzNTcxMTExLCJpYXQiOjE3MzkwMTMyNzF9.LdTq-TOFUzBCsCmmBoSMHM8ivs4j5ZV-TWpuYOTu0fg",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"recovery",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc3VtNDk4NjczQGdtYWlsLmNvbSIsImV4cGlyZUF0IjoxNzM5MDEzNTcxMTExLCJpYXQiOjE3MzkwMTMyNzF9.LdTq-TOFUzBCsCmmBoSMHM8ivs4j5ZV-TWpuYOTu0fg"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "email-verification",
+					"item": [
+						{
+							"name": "request-email-ver",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"masum498673@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/request-email-verification",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"request-email-verification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "email-verification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"masum498673@gmail.com\",\r\n    \"otp\": \"9895\",\r\n    \"token\": \"U2FsdGVkX18l0txSa+3+oBhUEmtfNityf70af5vtFBwKvdPaaJL3R1pWfv5DGoOQLcbqwm7Ux+myl61AVUIibJ0EMFqTVgd99FEgBvEK+l5tMgnOz4qhnPPjJ2ceVQp0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/email-verification",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"email-verification"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"item": [
+						{
+							"name": "create-admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role\":\"STUDENT\",\r\n    \"email\": \"masumkhan081@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\":\"123456\",\r\n    \"fullName\": \"John Doe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/test-account",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"test-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register-student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"masum498673@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\":\"123456\",\r\n    \"fullName\": \"John Doe\",\r\n    \"phone\": \"1833347848\",\r\n    \"gender\": \"MALE\",\r\n    \"address\": \"123 Main St, Springfield, USA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/register",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"masum498673@gmail.com\",\r\n    \"password\":\"123458\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{3000}}/auth/login",
+									"host": [
+										"{{3000}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{tkn_student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{3000}}/tasks?limit=1&search=plete",
+							"host": [
+								"{{3000}}"
+							],
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": "plete"
+								},
+								{
+									"key": "searchBy",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{tkn_student}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Complete Project report\",\r\n  \"shortDescription\": \"Summarize the key points of the project\",\r\n  \"description\": \"Prepare a detailed report covering all aspects of the project including budget, timeline, and challenges faced.\",\r\n  \"startDate\": \"2025-02-10T08:00:00.000Z\",\r\n  \"dueDate\": \"2025-02-15T17:00:00.000Z\",\r\n  \"isCompleted\": false,\r\n  \"completionPercentage\": 25,\r\n  \"rewardCoins\": 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{3000}}/tasks",
+							"host": [
+								"{{3000}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single-task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{tkn_student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{3000}}/tasks/67a745dfc13eb6bfa56686e8",
+							"host": [
+								"{{3000}}"
+							],
+							"path": [
+								"tasks",
+								"67a745dfc13eb6bfa56686e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{tkn_student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{3000}}/tasks/677db2871ce3345700745031",
+							"host": [
+								"{{3000}}"
+							],
+							"path": [
+								"tasks",
+								"677db2871ce3345700745031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{tkn_student}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"longName\":\"Piece\",\r\n    \"shortName\":\"Pc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{3000}}/tasks/677db2871ce3345700745031",
+							"host": [
+								"{{3000}}"
+							],
+							"path": [
+								"tasks",
+								"677db2871ce3345700745031"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

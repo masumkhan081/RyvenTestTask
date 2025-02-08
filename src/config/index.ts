@@ -20,13 +20,13 @@ interface Config {
 }
 
 const config: Config = {
-  baseUrl: process.env.BASE_URL || "http://localhost:3000/",
-  appName: "pharmacy-mgmt",
+  baseUrl: process.env.BASE_URL || "http://localhost:3000",
+  appName: "ryven",
   port: Number(process.env.PORT) || 3000,
-  dbName: "pharmacy-management",
+  dbName: "ryven-tasks",
   dbUrl:
     process.env.DB_URL ||
-    "mongodb+srv://masumkhan:pddrgj3q@drugs.dvfzpkl.mongodb.net/",
+    "mongodb+srv://studycontentsofmasumkhan:E6FZNjNRg5DyuXkX@cluster0.ty1ry.mongodb.net/",
   tokenSecret: process.env.JWT_ACCESS_TOKEN_SECRET || "i-act-as-token-secret",
   refreshTokenSecret:
     process.env.JWT_REFRESH_TOKEN_SECRET || "i-act-as-refresh-token-secret",
@@ -36,9 +36,8 @@ const config: Config = {
   jwtOptions: {
     expiresIn: "730h", // Token will expire after 30 days
   },
-  // Removed duplicate mailHost property
   senderMail: process.env.SENDER_MAIL || "masumkhan081.3s@gmail.com",
-  senderMailPassword: process.env.SENDER_MAIL_PASSWORD || "uigctmtbjzdyfxoa",
+  senderMailPassword: process.env.SENDER_MAIL_PASSWORD || "fjtjmfhnkmrwtvbp",
 };
 
 export default config;

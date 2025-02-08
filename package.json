@@ -4,12 +4,12 @@
   "description": "an assignment with objective of user auth and task management for self within 10 hours",
   "main": "./src/index.ts",
   "scripts": {
+    "2": "git add . && git commit -m `commited`",
+    "3": "git add . && git commit -m `commited` && git push",
     "start": "tsc && node dist/index.js",
     "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
     "d1": "tsc --watch",
     "d2": "node dist/index.js",
-    "2": "git add . && git commit -m `commited`",
-    "3": "git add . && git commit -m `commited` && git push",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
@@ -32,6 +32,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
@@ -40,19 +41,19 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9",
     "@eslint/js": "^9.15.0",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/crypto-js": "^4.2.2",
     "@types/express": "^5.0.0",
-    "@types/jsonwebtoken": "^9.0.7",
+    "@types/jsonwebtoken": "^9.0.8",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^22.10.0",
     "@types/nodemailer": "^6.4.17",
     "eslint": "^9.15.0",
     "globals": "^15.12.0",
     "husky": "^8.0.0",
+    "nodemon": "^3.1.9",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.16.0"
   }

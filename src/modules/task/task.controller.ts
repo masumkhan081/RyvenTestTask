@@ -42,6 +42,7 @@ export const getSingleTask: TypeController = async (req, res) => {
 export const createTask: TypeController = async (req, res) => {
   try {
     const result = await taskService.createTask(req.body);
+    console.log(`--log-- `+JSON.stringify(result))
     sendCreateResponse({ res, result, entity: entities.task });
   } catch (error) {
     console.error(error);

@@ -124,8 +124,7 @@ async function login({
           token = createToken({
             userId: user.id,
             role: user.role,
-            email: user.email,
-            expireAt: 2628000000 + Date.now(),
+            email: user.email
           });
 
           await user.save();

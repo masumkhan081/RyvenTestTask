@@ -62,14 +62,11 @@ const requestEmailVerification: TypeController = async (req, res) => {
       });
       return;
     }
-
     if (user.isVerified) {
       res.status(200).json({ message: "Account already verified" });
       return;
     }
-
     const { success, token } = await sendOTPMail(req.body.email);
-
     res.status(success ? 200 : 400).json({
       success,
       message: success

@@ -11,7 +11,7 @@ interface TokenPayload {
   // ... other properties
 }
 
-export const createToken = ( payload :  TokenPayload) => {
+export const createToken = (payload: TokenPayload) => {
   try {
     return jwt.sign(payload, config.tokenSecret, { expiresIn: "750h" });
   } catch (error) {
